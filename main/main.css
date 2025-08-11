@@ -1,0 +1,892 @@
+body {
+    background-color: #eeeeee;
+    margin: 0;
+    padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.top {
+    background-color: #5E9893;
+    width: 100%;
+    height: 65px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.buttons button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px; 
+    font-weight: bold;
+    margin-left: 15px;
+    color: #5E9893;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+}
+.logo img {
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 40px;
+    width: auto;
+}
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* 항목들을 균등한 간격으로 배치합니다 */
+    width: 100vw;
+    height: 5.5vh;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+.separator {
+    width: 1px;
+    height: 24px;
+    background-color: #666;
+    margin: 0 10px;
+    user-select: none;
+    align-self: center;
+    display: inline-block;
+}
+
+.menu1 {
+    text-align: center;
+    padding: 0 15px;
+    margin: 0;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+}
+
+.dropdown {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #5E9893;
+    user-select: none;
+}
+
+.dropdowns {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 4px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    min-width: 120px;
+    z-index: 1000;
+}
+
+.dropdowns > div {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd; /* 항목별 구분선 */
+    font-weight: normal;
+}
+.dropdowns > div:last-child {
+    border-bottom: none; /* 마지막 항목에는 구분선 제거 */
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    width: 100%;
+    height: 87px;
+    color: #5E9893;
+    background-color: #fff;
+    display: flex;  
+    justify-content: space-between; /* 좌우로 공간 배분 */
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column; 
+    font-size: 13px;
+    justify-content: center;
+    height: 100%;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.footer-text p {
+    margin: 0;
+    line-height: 1.2;
+}
+.logo2 {
+    margin-right: 7px;
+    width: 50px;
+}
+.box {
+    width: 600px; 
+    height: 400px;
+    background-color: #fff;
+    margin: 0 auto; 
+    font-weight: bold;
+    margin-top: 35px; 
+    margin-bottom: 100px; 
+    /* display: flex; */
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 17px;
+    border-radius: 25px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+    display: block;
+    padding: 20px 30px;
+}
+.check {
+    margin-left: 3px;
+    margin-top: 1px;
+    white-space: nowrap;
+}
+
+.long-line {
+    position: absolute;
+    top: 45px; /* p태그 밑에 약간 여백 주기 */
+    left: 15px; /* 좌우로 길게 뻗도록 */
+    width: 630px; /* 원하는 길이만큼 길게 */
+    border: none;
+    border-top: 1px solid #a5a5a5e0;
+    margin-left: 0px;
+}
+.laptop {
+    position: absolute;
+    top: 100px;   
+    right: 140px; 
+    width: 380px;
+}
+.checking {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);  /* 정확한 중앙 정렬 */
+    padding: 12px 70px;
+    background-color: #5E9893;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.login {
+    color: #5E9893;
+    font-size: 33px;
+    font-family:'나눔고딕';
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.loginbox {
+    position: absolute;
+    bottom: 30px;body {
+        background-color: #eeeeee;
+        margin: 0;
+        padding: 0;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .top {
+        background-color: #5E9893;
+        width: 100%;
+        height: 65px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .buttons button {
+        width: 100px;
+        height: 40px;
+        font-size: 15px; 
+        font-weight: bold;
+        margin-left: 15px;
+        color: #5E9893;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #fff;
+    }
+    .logo img {
+        margin-top: 5px;
+        margin-left: 5px;
+        height: 40px;
+        width: auto;
+    }
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-around; /* 이 부분을 수정하여 간격을 넓혔습니다. */
+        width: 100vw;
+        height: 5.5vh;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        white-space: nowrap;
+    }
+    
+    .menu1 {
+        text-align: center;
+        padding: 0 15px;
+        margin: 0;
+        display: block;
+        transition: background-color 0.3s ease;
+        font-size: 18px;
+        cursor: pointer;
+        font-weight: bold;
+        position: relative;
+    }
+    .separator {
+        width: 1px;
+        height: 24px;
+        background-color: #666;
+        margin: 0 10px;
+        user-select: none;
+        align-self: center;
+        display: inline-block;
+    }
+    
+    .dropdown {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        color: #5E9893;
+        user-select: none;
+    }
+    
+    .dropdowns {
+        display: none;
+        position: absolute;
+        top: 35px;
+        right: 4px;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        min-width: 120px;
+        z-index: 1000;
+    }
+    
+    .dropdowns > div {
+        padding: 10px 12px;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd; /* 항목별 구분선 */
+        font-weight: normal;
+    }
+    .dropdowns > div:last-child {
+        border-bottom: none; /* 마지막 항목에는 구분선 제거 */
+    }
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0; 
+        width: 100%;
+        height: 87px;
+        color: #5E9893;
+        background-color: #fff;
+        display: flex;  
+        justify-content: space-between; /* 좌우로 공간 배분 */
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+    
+    .footer-text {
+        display: flex;
+        flex-direction: column; 
+        font-size: 13px;
+        justify-content: center;
+        height: 100%;
+        gap: 5px;
+        margin-left: 10px;
+    }
+    
+    .footer-text p {
+        margin: 0;
+        line-height: 1.2;
+    }
+    .logo2 {
+        margin-right: 7px;
+        width: 50px;
+    }
+    .box {
+        width: 600px; 
+        height: 400px;
+        background-color: #fff;
+        margin: 0 auto; 
+        font-weight: bold;
+        margin-top: 35px; 
+        margin-bottom: 100px; 
+        /* display: flex; */
+        align-items: flex-start;
+        justify-content: space-between;
+        font-size: 17px;
+        border-radius: 25px; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    
+        position: relative;
+        display: block;
+        padding: 20px 30px;
+    }
+    .check {
+        margin-left: 3px;
+        margin-top: 1px;
+        white-space: nowrap;
+    }
+    
+    .long-line {
+        position: absolute;
+        top: 45px; /* p태그 밑에 약간 여백 주기 */
+        left: 15px; /* 좌우로 길게 뻗도록 */
+        width: 630px; /* 원하는 길이만큼 길게 */
+        border: none;
+        border-top: 1px solid #a5a5a5e0;
+        margin-left: 0px;
+    }
+    .laptop {
+        position: absolute;
+        top: 100px;   
+        right: 140px; 
+        width: 380px;
+    }
+    .checking {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);  /* 정확한 중앙 정렬 */
+        padding: 12px 70px;
+        background-color: #5E9893;
+        color: #fff;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .login {
+        color: #5E9893;
+        font-size: 33px;
+        font-family:'나눔고딕';
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }body {
+        background-color: #eeeeee;
+        margin: 0;
+        padding: 0;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .top {
+        background-color: #5E9893;
+        width: 100%;
+        height: 65px;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .buttons button {
+        width: 100px;
+        height: 40px;
+        font-size: 15px; 
+        font-weight: bold;
+        margin-left: 15px;
+        color: #5E9893;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #fff;
+    }
+    .logo img {
+        margin-top: 5px;
+        margin-left: 5px;
+        height: 40px;
+        width: auto;
+    }
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-around; /* 이미지와 같이 항목을 넓게 분배 */
+        width: 100vw;
+        height: 5.5vh;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        white-space: nowrap;
+    }
+    
+    .menu1 {
+        text-align: center;
+        padding: 0 15px;
+        margin: 0;
+        display: block;
+        transition: background-color 0.3s ease;
+        font-size: 18px;
+        cursor: pointer;
+        font-weight: bold;
+        position: relative;
+    }
+    .separator {
+        width: 1px;
+        height: 24px;
+        background-color: #666;
+        margin: 0 10px;
+        user-select: none;
+        align-self: center;
+        display: inline-block;
+    }
+    
+    .dropdown {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        color: #5E9893;
+        user-select: none;
+    }
+    
+    .dropdowns {
+        display: none;
+        position: absolute;
+        top: 35px;
+        right: 4px;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        min-width: 120px;
+        z-index: 1000;
+    }
+    
+    .dropdowns > div {
+        padding: 10px 12px;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd; /* 항목별 구분선 */
+        font-weight: normal;
+    }
+    .dropdowns > div:last-child {
+        border-bottom: none; /* 마지막 항목에는 구분선 제거 */
+    }
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0; 
+        width: 100%;
+        height: 87px;
+        color: #5E9893;
+        background-color: #fff;
+        display: flex;  
+        justify-content: space-between; /* 좌우로 공간 배분 */
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+    
+    .footer-text {
+        display: flex;
+        flex-direction: column; 
+        font-size: 13px;
+        justify-content: center;
+        height: 100%;
+        gap: 5px;
+        margin-left: 10px;
+    }
+    
+    .footer-text p {
+        margin: 0;
+        line-height: 1.2;
+    }
+    .logo2 {
+        margin-right: 7px;
+        width: 50px;
+    }
+    .box {
+        width: 600px; 
+        height: 400px;
+        background-color: #fff;
+        margin: 0 auto; 
+        font-weight: bold;
+        margin-top: 35px; 
+        margin-bottom: 100px; 
+        /* display: flex; */
+        align-items: flex-start;
+        justify-content: space-between;
+        font-size: 17px;
+        border-radius: 25px; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    
+        position: relative;
+        display: block;
+        padding: 20px 30px;
+    }
+    .check {
+        margin-left: 3px;
+        margin-top: 1px;
+        white-space: nowrap;
+    }
+    
+    .long-line {
+        position: absolute;
+        top: 45px; /* p태그 밑에 약간 여백 주기 */
+        left: 15px; /* 좌우로 길게 뻗도록 */
+        width: 630px; /* 원하는 길이만큼 길게 */
+        border: none;
+        border-top: 1px solid #a5a5a5e0;
+        margin-left: 0px;
+    }
+    .laptop {
+        position: absolute;
+        top: 100px;   
+        right: 140px; 
+        width: 380px;
+    }
+    .checking {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);  /* 정확한 중앙 정렬 */
+        padding: 12px 70px;
+        background-color: #5E9893;
+        color: #fff;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .login {
+        color: #5E9893;
+        font-size: 33px;
+        font-family:'나눔고딕';
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .loginbox {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);  /* 정확한 중앙 정렬 */
+        padding: 5px 170px;
+        background-color: #5E9893;
+        color: #fff;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+        font-size: 15px;
+    }
+    .loginbox {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);  /* 정확한 중앙 정렬 */
+        padding: 5px 170px;
+        background-color: #5E9893;
+        color: #fff;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+        font-size: 15px;
+    }
+}
+
+body {
+    background-color: #eeeeee;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    color: inherit; /* 부모 요소 글자색을 물려받음 */
+    text-decoration: none; /* 밑줄 제거 */
+  }
+  .top {
+    background-color: #5E9893;
+    width: 100%;
+    height: 65px;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  .buttons button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 15px;
+    color: #5E9893;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  .logo img {
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 40px;
+    width: auto;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 5.5vh;
+    background-color: #fff;
+    gap: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+  }
+  
+  .menu1 {
+    text-align: center;
+    padding: 0 15px; /* 기존 패딩 유지 */
+    margin: 0 100px; /* 좌우 간격을 더 크게 */
+    display: block;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+  }
+  .separator {
+    width: 1px;
+    height: 24px;
+    background-color: #666;
+    margin: 0 10px;
+    user-select: none;
+    align-self: center;
+    display: inline-block;
+  }
+  
+  .dropdown {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #679996;
+    user-select: none;
+  }
+  
+  .dropdowns {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 4px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    min-width: 120px;
+    z-index: 1000;
+  }
+  
+  .dropdowns > div {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd; /* 항목별 구분선 */
+    font-weight: normal;
+  }
+  .dropdowns > div:last-child {
+    border-bottom: none; /* 마지막 항목에는 구분선 제거 */
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 87px;
+    color: #679996;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between; /* 좌우로 공간 배분 */
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+  
+  .footer-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    justify-content: center;
+    height: 100%;
+    gap: 5px;
+    margin-left: 10px;
+  }
+  
+  .footer-text p {
+    margin: 0;
+    line-height: 1.2;
+  }
+  .logo2 {
+    margin-right: 7px;
+    width: 50px;
+  }
+  .box {
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    margin: 0 auto;
+    font-weight: bold;
+    margin-top: 65px;
+    margin-bottom: 100px;
+    /* display: flex; */
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 17px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  
+    position: relative;
+    display: block;
+    padding: 20px 30px;
+  }
+  .check {
+    margin-left: 3px;
+    margin-top: 1px;
+    white-space: nowrap;
+  }
+  
+  .long-line {
+    position: absolute;
+    top: 45px; /* p태그 밑에 약간 여백 주기 */
+    left: 15px; /* 좌우로 길게 뻗도록 */
+    width: 630px; /* 원하는 길이만큼 길게 */
+    border: none;
+    border-top: 1px solid #a5a5a5e0;
+    margin-left: 0px;
+  }
+  .laptop {
+    position: absolute;
+    top: 100px;
+    right: 140px;
+    width: 380px;
+  }
+
+  @media (max-width: 768px) {
+    .box {
+      width: 90%;
+      height: auto;
+      margin-top: 70px;
+      margin-bottom: 120px;
+      padding: 15px 20px;
+      border-radius: 20px;
+    }
+  
+    .long-line {
+      width: 90%;
+      left: 5%;
+      top: 40px;
+    }
+  
+    .laptop {
+      position: static;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto 0;
+      display: block;
+    }
+  
+    .checking {
+      position: static;
+      margin: 30px auto 20px;
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      transform: none;
+      padding: 12px 0;
+    }
+  
+    .menu {
+      gap: 30px;
+      height: 50px;
+    }
+  
+    .menu1 {
+      margin: 0 10px;
+      font-size: 16px;
+    }
+  
+    .top {
+      height: 50px;
+      padding: 0 10px;
+    }
+  
+    .logo img {
+      height: 30px;
+      margin-top: 0;
+      margin-left: 0;
+    }
+  
+    footer {
+      flex-direction: column;
+      height: auto;
+      padding: 10px 10px;
+      gap: 10px;
+      text-align: center;
+    }
+  
+    .footer-text {
+      margin-left: 0;
+      gap: 3px;
+    }
+  
+    .logo2 {
+      margin: 0 auto 10px;
+      width: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu {
+      flex-direction: column;
+      gap: 10px;
+      height: auto;
+      padding: 10px 0;
+    }
+  
+    .menu1 {
+      margin: 0;
+      font-size: 14px;
+    }
+  
+    .box {
+      padding: 15px 15px;
+      border-radius: 15px;
+    }
+  
+    .checking {
+      width: 100%;
+      max-width: none;
+    }
+  
+    .laptop {
+      max-width: 100%;
+    }
+  }
