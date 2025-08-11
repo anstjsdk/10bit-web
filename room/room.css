@@ -1,0 +1,491 @@
+body {
+    background-color: #eeeeee;
+    margin: 0;
+    padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.top {
+    background-color: #5E9893;
+    width: 100%;
+    height: 65px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.buttons button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px; 
+    font-weight: bold;
+    margin-left: 15px;
+    color: #5E9893;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+}
+.logo img {
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 40px;
+    width: auto;
+}
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 5.5vh;
+    background-color: #fff;
+    gap: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.menu1 {
+    text-align: center;
+    padding: 0 15px;
+    margin: 0 100px;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+}
+.separator {
+    width: 1px;
+    height: 24px;
+    background-color: #666;
+    margin: 0 10px;
+    user-select: none;
+    align-self: center;
+    display: inline-block;
+}
+
+.dropdown {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #5E9893;
+    user-select: none;
+}
+
+.dropdowns {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 4px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    min-width: 120px;
+    z-index: 1000;
+}
+
+.dropdowns > div {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    font-weight: normal;
+}
+.dropdowns > div:last-child {
+    border-bottom: none;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    width: 100%;
+    height: 87px;
+    color: #5E9893;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    justify-content: center;
+    height: 100%;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.footer-text p {
+    margin: 0;
+    line-height: 1.2;
+}
+.logo2 {
+    margin-right: 7px;
+    width: 50px;
+}
+.box {
+    width: 700px;
+    height: 450px;
+    background-color: #fff;
+    margin: 0 auto;
+    font-weight: bold;
+    margin-top: 35px;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 17px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: block;
+    padding: 20px 30px;
+}
+
+
+.long-line {
+    position: absolute;
+    top: 45px;
+    left: 30px;
+    width: 700px;
+    border: none;
+    border-top: 1px solid #a5a5a5e0;
+    margin-left: 0px;
+}
+.check {
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 17px;
+    margin-left: 3px;
+    margin-top: 1px;
+    white-space: nowrap;
+    background: none;
+}
+
+#dropdownBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #5E9893;
+    user-select: none;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    width: 120px;
+    z-index: 100;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.dropdown-item {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+.dropdown-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+.search-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+#searchInput {
+    width: 200px;
+    padding: 8px 13px;
+    font-size: 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px;
+    flex-grow: 0;
+}
+
+
+#searchInput:focus {
+    border-color: #5E9893;
+}
+
+#searchBtn {
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: #5E9893;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#searchBtn:hover {
+    background-color: #5E9893;
+}
+#classSelect {
+    width: 110px;
+    padding: 8px 13px;
+    font-size: 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px;
+    flex-grow: 0;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23346381' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 6px;
+    padding-right: 10px;
+}
+.tb {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px; /* inquiry.css와 동일한 값으로 변경 */
+    font-weight: normal;
+    font-size: 15px;
+    height: 270px;
+}
+.tb tbody tr:nth-child(even) {
+    background-color: #eeee;
+}
+.tb {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #333;
+}
+.tb thead {
+    background-color: #eeeeee;
+    border-top: 5px solid #5E9893;
+    color: #5E9893;
+}
+.tb thead th {
+    padding: 15px 15px;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+}
+.tb th, .tb td {
+    text-align: center;
+    vertical-align: middle;
+}
+.tb select {
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
+    padding-right: 30px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23346381' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 6px;
+}
+
+#teacher {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #5e9893;
+    user-select: none;
+  }
+  
+.nextPage-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+  
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0 4px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #5e9893;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+  
+.page-link:hover {
+    background-color: #f0f0f0;
+}
+  
+.page-link.active {
+    background-color: #5e9893;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #5e9893;
+}
+
+@media (max-width: 768px) {
+    .box {
+      width: 90%;
+      height: auto;
+      margin-top: 70px;
+      margin-bottom: 120px;
+      padding: 15px 20px;
+      border-radius: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .long-line {
+      width: 90%;
+      left: 5%;
+      top: 40px;
+    }
+  
+    .menu {
+      gap: 30px;
+      height: 50px;
+    }
+  
+    .menu1 {
+      margin: 0 10px;
+      font-size: 16px;
+    }
+  
+    .top {
+      height: 50px;
+      padding: 0 10px;
+    }
+  
+    .logo img {
+      height: 30px;
+      margin-top: 0;
+      margin-left: 0;
+    }
+  
+    .search-container {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    /* 학반 드롭다운과 검색창의 너비를 동일하게 설정 */
+    #classSelect,
+    #searchInput {
+      width: 48%; /* 너비를 48%로 설정해 한 줄에 나란히 배치 */
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+  
+    #searchBtn {
+      width: 100%; /* 검색 버튼은 한 줄 전체를 차지하도록 설정 */
+      margin-bottom: 0;
+    }
+    
+    footer {
+      flex-direction: column;
+      height: auto;
+      padding: 10px 10px;
+      gap: 10px;
+      text-align: center;
+    }
+  
+    .footer-text {
+      margin-left: 0;
+      gap: 3px;
+    }
+  
+    .logo2 {
+      margin: 0 auto 10px;
+      width: 40px;
+    }
+  }
+  
+  /* 모바일 (480px 이하) */
+  @media (max-width: 480px) {
+    .menu {
+      flex-direction: column;
+      gap: 10px;
+      height: auto;
+      padding: 10px 0;
+    }
+  
+    .menu1 {
+      margin: 0;
+      font-size: 14px;
+    }
+  
+    .box {
+      width: 90%;
+      max-width: 320px;
+      height: auto;
+      padding: 15px 15px;
+      border-radius: 15px;
+    }
+    
+    .long-line {
+      width: 80%;
+      left: 10%;
+      top: 35px;
+    }
+  
+    .search-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    /* 모든 요소를 한 줄에 하나씩 배치하고 너비는 100%로 설정 */
+    #classSelect,
+    #searchInput,
+    #searchBtn {
+      width: 100%;
+      margin-bottom: 5px;
+      box-sizing: border-box;
+    }
+    
+    .tb {
+      font-size: 12px;
+      table-layout: fixed;
+    }
+  
+    .tb th, .tb td {
+      padding: 8px 3px;
+    }
+  }
+  
