@@ -74,24 +74,17 @@ footer {
   margin-right: 7px;
   width: 50px;
 }
+
 .box {
   width: 450px;
-  height: 600px;
+  min-height: 600px; /* height 고정 대신 min-height 사용 */
   background-color: #fff;
-  margin: 0 auto;
-  /* font-weight: bold; */
-  margin-top: 65px;
-  margin-bottom: 100px;
-  /* display: flex; */
-  align-items: flex-start;
-  justify-content: space-between;
-  font-size: 17px;
+  margin: 65px auto 100px;
   border-radius: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-
-  position: relative;
-  display: block;
   padding: 20px 30px;
+  box-sizing: border-box;
+  display: block;
 }
 
 .long-line {
@@ -209,11 +202,8 @@ form {
 @media (max-width: 768px) {
   .box {
     width: 90%;
-    height: auto;
-    margin-top: 70px;
-    margin-bottom: 120px;
-    padding: 15px 20px;
-    border-radius: 20px;
+    min-height: auto; /* 화면에 맞게 자동 조절 */
+    margin: 50px auto;
   }
 
   .long-line {
@@ -280,6 +270,7 @@ form {
   }
 }
 
+/* 480px 이하에서 적용 */
 @media (max-width: 480px) {
   .menu {
     flex-direction: column;
@@ -294,8 +285,12 @@ form {
   }
 
   .box {
-    padding: 15px 15px;
+    width: 90%;
+    max-width: 320px;
+    min-height: auto; /* 자동으로 내용에 맞게 */
+    padding: 15px;
     border-radius: 15px;
+    margin: 30px auto; /* 여백 줄이기 */
   }
 
   .checking {
@@ -305,38 +300,6 @@ form {
 
   .laptop {
     max-width: 100%;
-  }
-}
-@media (max-width: 480px) {
-  .box {
-    width: 90%;
-    max-width: 320px;
-    height: auto;
-    padding: 15px 15px;
-    border-radius: 15px;
-  }
-}
-
-.box {
-  width: 450px;
-  height: 600px;
-  background-color: #fff;
-  margin: 65px auto 100px;
-  border-radius: 25px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  padding: 20px 30px;
-  box-sizing: border-box;
-  display: block;
-}
-
-/* 480px 이하에서만 적용*/
-@media (max-width: 480px) {
-  .box {
-    width: 90%;
-    max-width: 320px;
-    height: auto;
-    padding: 15px 15px;
-    border-radius: 15px;
   }
 
   .input-group input {
