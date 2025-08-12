@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const loginForm = document.querySelector('form');
-  const container = document.getElementById('login-container');
+  if (!loginForm) {
+    console.error('로그인 폼을 찾을 수 없습니다.');
+    return;
+  }
+
   const logoutButton = document.createElement('button');
   logoutButton.textContent = '로그아웃';
   logoutButton.style.display = 'none';
@@ -24,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    fetch('http://localhost:3000/login', {
+    fetch('http://127.0.0.1:5500/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,30 +36,28 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       body: JSON.stringify({ publicId, password }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`서버 응답 오류: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => {
         console.log('서버 응답:', data);
 
-        if (data.success && data.token) {
+        if (data.token) {
           localStorage.setItem('token', data.token);
           alert(`환영합니다, ${publicId}님!`);
           showLogout();
-
           fetchProtectedAPI();
         } else {
-          alert('로그인 실패: ' + data.message);
+          alert('로그인 실패: ' + (data.message || '서버 응답에 토큰이 없습니다.'));
         }
       })
       .catch((err) => {
         console.error('로그인 오류:', err);
-        alert('서버에 연결할 수 없습니다.');
+        alert('서버에 연결할 수 없습니다. 서버가 실행 중인지 확인하고 포트 설정을 확인하세요.');
       });
-  });
-
-  logoutButton.addEventListener('click', () => {
-    localStorage.removeItem('token');
-    alert('로그아웃 되었습니다.');
-    showLogin();
   });
 
   function fetchProtectedAPI() {
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    fetch('http://localhost:3000/someProtectedRoute', {
+    fetch('http://127.0.0.1:5500/someProtectedRoute', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
