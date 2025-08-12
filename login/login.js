@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('로그인 폼을 찾을 수 없습니다.');
     return;
   }
-  const container = document.getElementById('app');
+  const container = loginForm.parentElement; 
   if (!container) {
     console.error('컨테이너 요소를 찾을 수 없습니다.');
     return;
