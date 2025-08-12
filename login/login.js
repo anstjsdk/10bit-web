@@ -4,19 +4,16 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('로그인 폼을 찾을 수 없습니다.');
     return;
   }
-
+  const container = document.getElementById('app');
+  if (!container) {
+    console.error('컨테이너 요소를 찾을 수 없습니다.');
+    return;
+  }
+  
   const logoutButton = document.createElement('button');
   logoutButton.textContent = '로그아웃';
   logoutButton.style.display = 'none';
   container.appendChild(logoutButton);
-
-  const token = localStorage.getItem('token');
-  if (token) {
-    showLogout();
-  } else {
-    showLogin();
-  }
-
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
