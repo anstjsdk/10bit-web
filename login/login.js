@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
   const loginForm = document.querySelector('form');
+  const container = document.getElementById('login-container');
+  const logoutButton = document.createElement('button');
+  logoutButton.textContent = '로그아웃';
+  logoutButton.style.display = 'none';
+
+  container.appendChild(logoutButton);
+
+  const token = localStorage.getItem('token');
+  if (token) {
+    showLogout();
+  } else {
+    showLogin();
+  }
 
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -25,9 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
+        if (data.success && data.token) {
+          localStorage.setItem('token', data.token);
           alert(`환영합니다, ${publicId}님!`);
-          window.location.href = '../main/main.html';
+          showLogout();
         } else {
           alert('로그인 실패: ' + data.message);
         }
@@ -37,4 +51,20 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('서버에 연결할 수 없습니다.');
       });
   });
+
+  logoutButton.addEventListener('click', () => {
+    localStorage.removeItem('token');
+    alert('로그아웃 되었습니다.');
+    showLogin();
+  });
+
+  function showLogout() {
+    loginForm.style.display = 'none';
+    logoutButton.style.display = 'inline-block';
+  }
+
+  function showLogin() {
+    loginForm.style.display = 'block';
+    logoutButton.style.display = 'none';
+  }
 });
