@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const logoutButton = document.createElement('button');
   logoutButton.textContent = '로그아웃';
   logoutButton.style.display = 'none';
-
   container.appendChild(logoutButton);
 
   const token = localStorage.getItem('token');
@@ -31,17 +30,18 @@ document.addEventListener('DOMContentLoaded', function () {
         'Content-Type': 'application/json',
         'userAgent': navigator.userAgent
       },
-      body: JSON.stringify({
-        publicId,
-        password,
-      }),
+      body: JSON.stringify({ publicId, password }),
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log('서버 응답:', data);
+
         if (data.success && data.token) {
           localStorage.setItem('token', data.token);
           alert(`환영합니다, ${publicId}님!`);
           showLogout();
+
+          fetchProtectedAPI();
         } else {
           alert('로그인 실패: ' + data.message);
         }
@@ -57,6 +57,25 @@ document.addEventListener('DOMContentLoaded', function () {
     alert('로그아웃 되었습니다.');
     showLogin();
   });
+
+  function fetchProtectedAPI() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      console.error('토큰이 없습니다. 보호된 API를 호출할 수 없습니다.');
+      return;
+    }
+
+    fetch('http://localhost:3000/someProtectedRoute', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      }
+    })
+      .then(res => res.json())
+      .then(data => console.log('보호된 API 응답:', data))
+      .catch(err => console.error('보호된 API 오류:', err));
+  }
 
   function showLogout() {
     loginForm.style.display = 'none';
