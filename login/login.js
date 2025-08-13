@@ -4,16 +4,25 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('로그인 폼을 찾을 수 없습니다.');
     return;
   }
-  const container = document.getElementById('app');
+  
+  const container = loginForm.parentElement;
   if (!container) {
     console.error('컨테이너 요소를 찾을 수 없습니다.');
     return;
   }
-  
+
   const logoutButton = document.createElement('button');
   logoutButton.textContent = '로그아웃';
   logoutButton.style.display = 'none';
   container.appendChild(logoutButton);
+
+  const token = localStorage.getItem('token');
+  if (token) {
+    showLogout();
+  } else {
+    showLogin();
+  }
+
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -24,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('아이디와 비밀번호를 모두 입력해주세요.');
       return;
     }
-
+    
     fetch('http://127.0.0.1:5500/auth/login', {
       method: 'POST',
       headers: {
@@ -57,13 +66,19 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 
+  logoutButton.addEventListener('click', () => {
+    localStorage.removeItem('token');
+    alert('로그아웃 되었습니다.');
+    showLogin();
+  });
+
   function fetchProtectedAPI() {
     const token = localStorage.getItem('token');
     if (!token) {
       console.error('토큰이 없습니다. 보호된 API를 호출할 수 없습니다.');
       return;
     }
-
+    
     fetch('http://127.0.0.1:5500/someProtectedRoute', {
       method: 'GET',
       headers: {
