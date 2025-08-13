@@ -151,7 +151,7 @@ footer {
 
     position: relative;
     display: block;
-    padding: 20px 30px;
+    padding: 20px 60px;
 }
 .check {
     margin-left: 3px;
@@ -225,7 +225,7 @@ form {
 }
 .input-group label {
     font-weight: bold;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     color: #000;
     font-size: 16px;
 }
