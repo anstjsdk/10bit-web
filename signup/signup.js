@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const publicId = document.getElementById('userid').value.trim();
     const password = document.getElementById('password').value.trim();
-    const studentNumber = document.getElementById('student').value.trim();
+    const studentNumber = parseInt(document.getElementById('student').value.trim(), 10);
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
 
-    if (!publicId || !password || !studentNumber || !name || !email) {
+    if (!publicId || !password || isNaN(studentNumber) || !name || !email) {
       alert('모든 항목을 올바르게 입력해주세요.');
       return;
     }
