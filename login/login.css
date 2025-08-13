@@ -258,6 +258,14 @@ form {
     text-decoration: underline;
 }
 
+.content {
+  min-height: calc(100vh - 65px - 5.5vh - 87px); /* 상단바, 메뉴, footer 높이 제외 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
 @media (max-width: 768px) {
     .box {
       width: 90%;
