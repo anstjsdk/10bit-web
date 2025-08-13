@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     
-    fetch('http://127.0.0.1:5500/someProtectedRoute', {
+    fetch('http://localhost:8080/auth/login', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

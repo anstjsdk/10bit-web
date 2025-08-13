@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    fetch('http://localhost:3000/signup', {
+    fetch('http://localhost:8080/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
