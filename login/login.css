@@ -184,7 +184,7 @@ footer {
 
 
 .loginbox {
-    padding: 12px 180px;
+    padding: 12px 205px;
     background-color: #5E9893;
     color: #fff;
     border-radius: 6px;
@@ -235,7 +235,7 @@ form {
     border-radius: 13px;
     border: 1.5px solid #cccccc8d;
     font-size: 16px;
-    width: 370px;
+    width: 420px;
 }
 
 .logins {
@@ -258,12 +258,11 @@ form {
     text-decoration: underline;
 }
 
-.content {
-  min-height: calc(100vh - 65px - 5.5vh - 87px); /* 상단바, 메뉴, footer 높이 제외 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
+.center-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media (max-width: 768px) {
@@ -345,7 +344,7 @@ form {
       flex-direction: column;
       gap: 10px;
       height: auto;
-      padding: 10px 0;
+      padding: 10px;
     }
   
     .menu1 {
