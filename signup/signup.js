@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(data => {
       if (data.success) {
-        alert('회원가입 성공!');
+        alert('회원가입 성공');
         window.location.href = '../login/login.html';
       } else {
         alert('회원가입 실패: ' + (data.message || '알 수 없는 오류'));

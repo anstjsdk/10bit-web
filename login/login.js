@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (data.token) {
           localStorage.setItem('token', data.token);
-          alert(`환영합니다, ${publicId}님!`);
+          alert(`환영합니다, ${publicId}님`);
           showLogout();
           fetchProtectedAPI();
         } else {
