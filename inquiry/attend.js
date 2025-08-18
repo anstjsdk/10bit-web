@@ -20,37 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const tds = document.querySelectorAll(".tb tbody td");
-
-  tds.forEach((td) => {
-    if (td.textContent.trim() === "") {
-      const select = document.createElement("select");
-      select.style.width = "70px";
-      select.style.padding = "3px 10px";
-
-      const Default = document.createElement("option");
-      Default.value = "";
-      Default.text = "선택";
-      Default.disabled = true;
-      Default.selected = true;
-
-      const Present = document.createElement("option");
-      Present.value = "출석";
-      Present.text = "출석";
-
-      const Absent = document.createElement("option");
-      Absent.value = "미출석";
-      Absent.text = "미출석";
-
-      select.appendChild(Default);
-      select.appendChild(Present);
-      select.appendChild(Absent);
-
-      td.textContent = "";
-      td.appendChild(select);
-    }
-  });
-
   const button = document.getElementById("teacher");
   let dropdown = null;
 
@@ -131,12 +100,15 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add('active');
     });
   });
+
   const classSelect = document.getElementById("classSelect");
+  const tableBody = document.querySelector(".tb tbody");
+
   if (classSelect) {
     classSelect.addEventListener("change", () => {
       const selectedValue = classSelect.options[classSelect.selectedIndex].text;
       
-      fetch("/your-server-endpoint", {
+      fetch("/classroom/lookup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -151,10 +123,54 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((data) => {
         console.log("Success:", data);
+        updateTable(data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
+    });
+  }
+
+  function updateTable(students) {
+
+    tableBody.innerHTML = '';
+
+    if (!Array.isArray(students)) {
+      console.error("Invalid data format: Expected an array.");
+      return;
+    }
+
+    students.forEach(student => {
+      const row = document.createElement("tr");
+
+      const select = document.createElement("select");
+      select.style.width = "70px";
+      select.style.padding = "3px 10px";
+
+      const presentOption = document.createElement("option");
+      presentOption.value = "출석";
+      presentOption.text = "출석";
+
+      const absentOption = document.createElement("option");
+      absentOption.value = "미출석";
+      absentOption.text = "미출석";
+
+      select.appendChild(presentOption);
+      select.appendChild(absentOption);
+      if (student.attendance === "PRESENT") {
+        presentOption.selected = true;
+      } else if (student.attendance === "ABSENT") {
+        absentOption.selected = true;
+      }
+      row.innerHTML = `
+        <td>${student.studentNumber}</td>
+        <td>${student.studentName}</td>
+        <td class="class-name">${student.classRoomName}</td>
+      `;
+      const attendanceCell = document.createElement('td');
+      attendanceCell.appendChild(select);
+      row.appendChild(attendanceCell);
+      tableBody.appendChild(row);
     });
   }
 });
