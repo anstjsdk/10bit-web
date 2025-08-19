@@ -131,4 +131,30 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add('active');
     });
   });
+  const classSelect = document.getElementById("classSelect");
+  if (classSelect) {
+    classSelect.addEventListener("change", () => {
+      const selectedValue = classSelect.options[classSelect.selectedIndex].text;
+      
+      fetch("/your-server-endpoint", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ classRoomName: selectedValue }),
+      })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    });
+  }
 });
